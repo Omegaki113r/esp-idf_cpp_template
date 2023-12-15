@@ -4,7 +4,9 @@ cmake_minimum_required(VERSION 3.8)
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(EXTRA_COMPONENT_DIRS core application)
+set(EXTRA_COMPONENT_DIRS core app)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(LEDController)
+
+spiffs_create_partition_image(storage spiffs FLASH_IN_PROJECT)
